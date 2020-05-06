@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { FormBuilder } from "@angular/forms";
+import { Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-contactus',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService, private fb: FormBuilder) { }
+  contactusForm: any;
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.contactusForm = this.fb.group({
+      fullName: "",
+      emailAddress: "",
+      number: "",
+      message: ["", [Validators.required, Validators.maxLength(150)]],
+    });
   }
-
 }

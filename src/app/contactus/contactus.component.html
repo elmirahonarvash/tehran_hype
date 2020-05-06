@@ -1,1 +1,104 @@
-<div class="main"> </div>
+<body>
+  <div class="header">
+    <div class="head" fxLayout="row">
+      <div class="sidnav">
+        <mat-sidenav-container
+          class="example-container"
+          fxLayoutAlign="start center"
+        >
+          <mat-sidenav #sidenav mode="side" fxLayoutAlign="center center">
+            <mat-nav-list class="margintop">
+              <a mat-list-item routerLink="/welcome" (click)="sidenav.close()">
+                <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
+              </a>
+              <a mat-list-item routerLink="/aboutus" (click)="sidenav.close()">
+                <mat-icon>people</mat-icon>
+                <span class="nav-caption">AboutUs</span>
+              </a>
+              <a
+                mat-list-item
+                routerLink="/contactus"
+                (click)="sidenav.close()"
+              >
+                <mat-icon>email</mat-icon>
+                <span class="nav-caption">ContactUs</span>
+              </a>
+            </mat-nav-list>
+          </mat-sidenav>
+          <mat-sidenav-content>
+            <button
+              class="btn-position"
+              mat-icon-button
+              (click)="sidenav.toggle()"
+            >
+              <mat-icon>menu</mat-icon>
+            </button>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+      </div>
+
+      <div
+        class="content"
+        fxFlex
+        fxLayoutAlign="center center"
+        fxLayout="column"
+      >
+        <div fxLayoutAlign="center center">
+          <mat-card
+            class="form-container"
+            fxLayoutAlign="center center"
+            fxLayout="column"
+          >
+            <h1>Contact Us</h1>
+
+            <form
+              [formGroup]="contactusForm"
+              fxLayout="column"
+              fxLayoutGap="1rem"
+              fxLayoutAlign="center center"
+            >
+              <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="fullName" />
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="emailAddress" />
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Number</mat-label>
+                <input matInput formControlName="number" />
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Message</mat-label>
+                <textarea
+                  matInput
+                  formControlName="message"
+                  type="text"
+                ></textarea>
+              </mat-form-field>
+
+              <div>
+                <button mat-raised-button class="btn">
+                  SEND
+                </button>
+              </div>
+            </form>
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="auth0">
+        <ul class="navigation-items">
+          <li>
+            <a (click)="auth.login()" *ngIf="!auth.loggedIn">Login</a>
+            <a (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>

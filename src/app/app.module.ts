@@ -9,20 +9,24 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { MaterialModule } from './material/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     ContactusComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
 
 
   ],

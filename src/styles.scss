@@ -1,20 +1,10 @@
-// light grey: rgba(155, 148, 148, 0.8)
-// dark grey: rgba(0, 0, 0, 0.8)
-
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 html,
 body {
   height: 100%;
-}
-body {
-  //margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.7;
-  color: #7777;
-  padding: 3rem;
+  box-sizing: border-box;
 }
 
 * {
@@ -33,65 +23,14 @@ html {
   font-size: 62.5%;
 }
 
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(155, 148, 148, 0.8),
-      rgba(0, 0, 0, 0.8)
-    ),
-    url(src\assets\cloth.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-}
-
-.logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.logo {
-  height: 3.5rem;
-}
-
-.text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  //background-color: rgb(151, 69, 69);
-  transform: translate(-50%, -50%);
-}
-
-.heading-primary {
-  color: white;
+// mat-sidenav-container,
+// mat-sidenav-content,
+// mat-sidenav {
+//   height: 100%;
   
-  animation-name: moveInLeft;
-  animation-duration: 2s;
-}
+// }
 
-.heading-primary-main {
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 2rem;
-
-}
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
- 60% {
-   opacity: 0.5;
-   transform: translateY(10px);
- }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
+// mat-sidenav {
+//   width: 250px;
   
+// }
